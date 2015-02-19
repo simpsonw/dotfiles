@@ -34,6 +34,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tomasr/molokai' " Add molokai colorscheme
 Plugin 'ciaranm/inkpot' " Add inkpot colorscheme
+Plugin 'altercation/vim-colors-solarized' " Add solarized colorscheme
 Plugin 'kien/ctrlp.vim' " Fuzzy file finder
 Plugin 'Shougo/neocomplcache.vim' " Autocomplete pluging
 Plugin 'scrooloose/nerdcommenter' " Block commenting plugin

@@ -46,7 +46,7 @@ set nocompatible " Must be first line
 	set number " Enable line numbers
 	syntax on " Enable syntax highlighting
 	filetype plugin indent on " Use filetype detection
-	color inkpot " Use inkpot colorscheme
+	colorscheme solarized " Use solarized  colorscheme
 	set cursorline " Highlight the current line
 	set autoindent
 	set smartindent
