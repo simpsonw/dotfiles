@@ -1,6 +1,5 @@
 set nocompatible " Must be first line
 
-
 "===============================================================================
 " Identify platform
 "===============================================================================
@@ -27,11 +26,6 @@ set nocompatible " Must be first line
 	" Read separate file containing bundles
 	if filereadable(expand("~/.vimrc.bundles"))
 		source ~/.vimrc.bundles
-	endif
-
-	" Read separate file for local settings
-	if filereadable(expand("~/.vimrc.local"))
-		source ~/.vimrc.local
 	endif
 
 
@@ -67,6 +61,8 @@ set nocompatible " Must be first line
 	autocmd FileType scss setlocal shiftwidth=2
 
 	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType html,markdown setlocal tabstop=2
+	autocmd FileType html,markdown setlocal shiftwidth=2
 	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 	" Load Drupal tab settings for JavaScript files
 	autocmd FileType javascript setlocal tabstop=2
@@ -183,3 +179,10 @@ set nocompatible " Must be first line
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
+
+"===============================================================================
+" Load local configuration files
+"===============================================================================
+if filereadable(expand("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
