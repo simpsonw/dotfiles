@@ -105,7 +105,7 @@ setw -g window-status-current-attr bright
 set -g pane-border-fg green
 set -g pane-border-bg black
 set -g pane-active-border-fg green
-set -g pane-active-border-bg yellow
+#set -g pane-active-border-bg yellow
 
 # Command line
 set -g message-fg white
