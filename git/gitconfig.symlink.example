@@ -4,16 +4,18 @@
 [hub]
         protocol = https
 [user]
-        name = AUTHORNAME
-        email = AUTHOREMAIL
+        name = "Will Simpson"
+        email = wsimpson@email.arizona.edu
 [credential]
-        helper = GIT_CREDENTIAL_HELPER
+        helper = cache
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
         wtf     = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
+	lg = log --oneline --decorate --all --graph
+	permission-reset = !git diff -p -R | grep -E \"^(diff|(old|new) mode)\" | git apply
 [color]
         diff = auto
         status = auto
