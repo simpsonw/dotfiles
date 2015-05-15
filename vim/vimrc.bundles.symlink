@@ -32,9 +32,6 @@ Plugin 'gmarik/Vundle.vim'
 " " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
 
-Plugin 'tomasr/molokai' " Add molokai colorscheme
-Plugin 'ciaranm/inkpot' " Add inkpot colorscheme
-Plugin 'altercation/vim-colors-solarized' " Add solarized colorscheme
 Plugin 'kien/ctrlp.vim' " Fuzzy file finder
 Plugin 'Shougo/neocomplcache.vim' " Autocomplete pluging
 Plugin 'scrooloose/nerdcommenter' " Block commenting plugin
@@ -47,6 +44,7 @@ Plugin 'rhlobo/vim-super-retab' "Retab tool
 Plugin 'KabbAmine/zeavim.vim' " Integration with Zeal documentation browser.
 Plugin 'mustache/vim-mustache-handlebars' " Syntax highlighting for Mustache templates.
 Plugin 'jeetsukumaran/vim-buffergator' " Buffer navigator
+Plugin 'chriskempson/base16-vim' " Add base16 colorschemes
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
