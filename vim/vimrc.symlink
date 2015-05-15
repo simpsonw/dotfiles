@@ -34,13 +34,14 @@ set nocompatible " Must be first line
 "===============================================================================
 	set spell " Enable spell checking
 	set t_Co=256 " Set terminal to use 256 colors
+	let base16colorspace=256  " Access colors present in 256 colorspace
 	set mouse=a " Automatically enable mouse usage
 	set mousehide " Hide the mouse cursor while typing
 	set background=dark " Assume a dark background
 	set number " Enable line numbers
 	syntax on " Enable syntax highlighting
 	filetype plugin indent on " Use filetype detection
-	colorscheme solarized " Use solarized  colorscheme
+	colorscheme base16-monokai " Use monokai colorscheme
 	set cursorline " Highlight the current line
 	set autoindent
 	set smartindent
@@ -48,7 +49,6 @@ set nocompatible " Must be first line
 
 	" Make columns past 80 a different color
 	let &colorcolumn=join(range(81,999),",")
-
 
 
 	" Enable omni completion.
