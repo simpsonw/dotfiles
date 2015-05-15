@@ -186,6 +186,7 @@ set nocompatible " Must be first line
        nmap <leader>bb :CtrlPBuffer<cr>
        nmap <leader>bm :CtrlPMixed<cr>
        nmap <leader>bs :CtrlPMRU<cr>
+       let g:ctrlp_working_path_mode = 'c'
 
 "===============================================================================
 " NERDTree Settings
