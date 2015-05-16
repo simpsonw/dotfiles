@@ -194,13 +194,13 @@ set nocompatible " Must be first line
 	map <C-n> :NERDTreeToggle<CR>
 
 	set laststatus=2 " Always show status line
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+	python from powerline.vim import setup as powerline_setup
+	python powerline_setup()
+	python del powerline_setup
 
 "===============================================================================
 " Load local configuration files
 "===============================================================================
-if filereadable(expand("~/.vimrc.local"))
-	source ~/.vimrc.local
-endif
+	if filereadable(expand("~/.vimrc.local"))
+		source ~/.vimrc.local
+	endif
