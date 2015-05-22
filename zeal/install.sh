@@ -1,4 +1,4 @@
 #!/bin/bash
-add-apt-repository ppa:jerzy-kozera/zeal-ppa
-apt-get update
-apt-get install zeal
+ sudo yes | add-apt-repository ppa:zeal-developers/ppa
+ sudo apt-get update
+ sudo apt-get install zeal
