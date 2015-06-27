@@ -78,6 +78,12 @@ set nocompatible " Must be first line
 	autocmd FileType php setlocal autoindent
 	autocmd FileType php setlocal smartindent
 
+	autocmd FileType cucumber setlocal expandtab
+	autocmd FileType cucumber setlocal tabstop=2
+	autocmd FileType cucumber setlocal shiftwidth=2
+	autocmd FileType cucumber setlocal autoindent
+	autocmd FileType cucumber setlocal smartindent
+
 	syntax match Tab /\t/
 	hi Tab gui=underline guifg=blue ctermbg=blue
 
@@ -125,7 +131,7 @@ set nocompatible " Must be first line
 	let g:neocomplcache_omni_patterns.c = '[^.[:digit:]*\t]\%(\.\|->\)'
 	let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:]*\t]\%(\.\|->\)\|\h\w*::'
 
-	let g:ctrlp_working_path_mode = 'r'
+	let g:ctrlp_working_path_mode = 0 
 
 	" Setup some default ignores
 	let g:ctrlp_custom_ignore = {
@@ -186,7 +192,7 @@ set nocompatible " Must be first line
        nmap <leader>bb :CtrlPBuffer<cr>
        nmap <leader>bm :CtrlPMixed<cr>
        nmap <leader>bs :CtrlPMRU<cr>
-       let g:ctrlp_working_path_mode = 'c'
+       let g:ctrlp_working_path_mode = 0
 
 "===============================================================================
 " NERDTree Settings
@@ -204,3 +210,4 @@ set nocompatible " Must be first line
 	if filereadable(expand("~/.vimrc.local"))
 		source ~/.vimrc.local
 	endif
+hi NonText ctermfg=250 ctermbg=none

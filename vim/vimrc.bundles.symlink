@@ -45,6 +45,8 @@ Plugin 'KabbAmine/zeavim.vim' " Integration with Zeal documentation browser.
 Plugin 'mustache/vim-mustache-handlebars' " Syntax highlighting for Mustache templates.
 Plugin 'jeetsukumaran/vim-buffergator' " Buffer navigator
 Plugin 'chriskempson/base16-vim' " Add base16 colorschemes
+Bundle 'ntpeters/vim-better-whitespace'
+Plugin 'wikitopian/hardmode.git'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
