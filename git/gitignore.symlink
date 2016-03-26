@@ -2,3 +2,9 @@
 *~
 *.swp
 .settings.el
+TAGS
+tags.vim
+GTAGS
+GRTAGS
+GPATH
+.tern-port
