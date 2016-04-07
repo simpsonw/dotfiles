@@ -280,6 +280,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
   (setq-default indent-tabs-mode nil) ; always replace tabs with spaces
   (my-setup-indent 4)
+  (setq tramp-default-method "ssh")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
