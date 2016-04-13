@@ -1,4 +1,6 @@
 #!/bin/bash
+cd "${0%/*}"
 git clone https://github.com/metalelf0/gnome-terminal-colors.git
 cd gnome-terminal-colors
-./install.sh -s dracula
+mv install.sh setup.sh
+./setup.sh -s dracula -p Default

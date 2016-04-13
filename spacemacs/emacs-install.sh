@@ -1,4 +1,5 @@
 #!/bin/bash
+cd "${0%/*}"
 echo -n "Have you enabled source code repositories in Software Sources and cleared the cache? [y/n]"
 
 read response
