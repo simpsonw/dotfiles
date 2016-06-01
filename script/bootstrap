@@ -139,8 +139,7 @@ install_dotfiles () {
     else
       dst="$HOME/.config/$parent_dir/$(basename "${src%.*}")"
     fi
-    echo $dst
-    #link_file "$src" "$dst"
+    link_file "$src" "$dst"
   done
 }
 
