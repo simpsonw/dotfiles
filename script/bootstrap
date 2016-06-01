@@ -132,8 +132,15 @@ install_dotfiles () {
 
   for src in $(find "$DOTFILES_ROOT/" -maxdepth 2 -name '*.symlink')
   do
-    dst="$HOME/.$(basename "${src%.*}")"
-    link_file "$src" "$dst"
+    parent_dir=$(basename $(dirname $src))
+    if [ "$parent_dir" != "nvim" ]
+    then
+      dst="$HOME/.$(basename "${src%.*}")"
+    else
+      dst="$HOME/.config/$parent_dir/$(basename "${src%.*}")"
+    fi
+    echo $dst
+    #link_file "$src" "$dst"
   done
 }
 
