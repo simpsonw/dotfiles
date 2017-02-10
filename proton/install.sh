@@ -4,7 +4,8 @@ sudo dpkg -i atom-amd64.deb
 git clone https://github.com/simpsonw/proton ~/proton
 cd ~/proton
 git checkout php_layer
-wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein ~/bin/
+wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+mv lein ~/bin/
 chmod a+x ~/bin/lein
 lein
 lein run -m build/release
