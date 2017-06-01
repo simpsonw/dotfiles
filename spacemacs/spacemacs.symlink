@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -346,6 +347,27 @@ you should place your code here."
   (setq-default indent-tabs-mode nil) ; always replace tabs with spaces
   (my-setup-indent 4)
   (setq tramp-default-method "ssh")
+  (spacemacs/set-leader-keys
+    "Gg" 'geben
+    "Gp" 'geben-toggle-pause-at-entry-line-flag
+    "Gr" 'geben-run
+    "GR" 'geben-run-to-cursor
+    "Gs" 'geben-stop
+    "Gq" 'geben-end
+    "Gf" 'geben-find-file
+    "GF" 'geben-open-file
+    "Gj" 'geben-step-again
+    "Gk" 'geben-step-into
+    "Gh" 'geben-step-over
+    "Gl" 'geben-step-out
+    "Gt" 'geben-show-backtrace
+    "Gc" 'geben-display-context
+    "Ga" 'geben-set-breakpoint-line
+    "Gd" 'geben-set-breakpoint-call
+    "GD" 'geben-set-breakpoint-return
+    "Ge" 'geben-set-breakpoint-exception
+    "GA" 'geben-unset-breakpoint-line
+    "Gx" 'geben-clear-breakpoints)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
