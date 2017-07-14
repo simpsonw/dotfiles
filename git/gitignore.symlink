@@ -2,6 +2,7 @@
 *~
 *.swp
 .settings.el
+.php_cs.cache
 TAGS
 tags.vim
 GTAGS
