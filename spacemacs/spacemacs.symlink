@@ -31,7 +31,9 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     markdown
+     chrome
+     python
+     (markdown :variables markdown-live-preview-engine 'vmd)
      yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
