@@ -87,7 +87,7 @@ bind m command-prompt -p "move window to:"  "move-window -t '%%'"
 
 ##### Colors #####
 # Ensure we're using 256 colors
-set -g default-terminal "xterm-color"
+set -g default-terminal "tmux-256color"
 
 # Status bar
 set -g status-fg white
