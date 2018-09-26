@@ -1,1 +1,0 @@
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
