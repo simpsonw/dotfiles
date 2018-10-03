@@ -32,6 +32,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
 
+# start compton with custom config
+exec_always compton --config ~/.config/i3/compton.conf
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
