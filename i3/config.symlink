@@ -85,6 +85,9 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# take screenshot
+bindsym $mod+Print exec gnome-screenshot -i
+
 # focus the parent container
 bindsym $mod+a focus parent
 
