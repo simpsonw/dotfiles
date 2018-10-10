@@ -30,7 +30,7 @@ font pango:Inconsolata 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec rxvt-unicode
 
 # start compton with custom config
 exec_always compton --config ~/.config/i3/compton.conf
