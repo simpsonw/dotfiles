@@ -165,5 +165,6 @@ bar {
 
 # start Network Manager
 exec --no-startup-id nm-applet
+exec clamshell
 # Set wallpaper
 exec ~/.fehbg
