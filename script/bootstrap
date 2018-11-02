@@ -130,14 +130,21 @@ install_dotfiles () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
+  if [ ! -d "$HOME/.local/bin" ] ; then
+      mkdir "$HOME/.local/bin"
+  fi
+
   for src in $(find "$DOTFILES_ROOT/" -maxdepth 2 -name '*.symlink')
   do
     parent_dir=$(basename $(dirname $src))
-    if [ "$parent_dir" != "i3" ]
+    if [ "$parent_dir" = "i3" ]
     then
-      dst="$HOME/.$(basename "${src%.*}")"
+        dst="$HOME/.config/$parent_dir/$(basename "${src%.*}")"
+    elif [ "$parent_dir" = "bin" ]
+    then
+         dst="$HOME/.local/$parent_dir/$(basename "${src%.*}")"
     else
-      dst="$HOME/.config/$parent_dir/$(basename "${src%.*}")"
+        dst="$HOME/.$(basename "${src%.*}")"
     fi
     link_file "$src" "$dst"
   done
