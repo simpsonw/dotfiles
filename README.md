@@ -3,16 +3,19 @@
 ## dotfiles
 
 These are my dotfiles for configuring bash, git, and many other things.  These
-are targeted for my current Linux distro of choice, Linux Mint 17.3 and have not
+are targeted for my current Linux distro of choice, Linux Mint 18.3 and have not
 been tested on other environments.  This repo started as a fork of the
 [dotfiles](https://github.com/holman/dotfiles) repo from @holman.
+
+I decided to "unfork" from the main holman repo since I tend to use Bash rather than
+ZSH and I don't use macOS.
 
 ## install
 
 Run this:
 
 ```sh
-git clone https://github.com/holman/dotfiles.git ~/.dotfiles
+git clone https://github.com/simpsonw/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
