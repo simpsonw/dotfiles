@@ -1,0 +1,22 @@
+#!/bin/bash
+
+for i in "$@"
+do
+case $i in
+    -u=*|--user=*)
+    DB_USER="${i#*=}"
+    shift # past argument=value
+    ;;
+    -d=*|--database=*)
+    DB_NAME="${i#*=}"
+    shift # past argument=value
+    ;;
+    *)
+    echo "Usage: remote_mysqldump -u=[mysql_username] -d=[mysql_database] [ssh_user]@[ssh_remote_host]"
+    exit 1
+    
+    ;;
+esac
+done
+
+ssh $1 "mysqldump -u ${DB_USER} -p  ${DB_NAME} | gzip -c" | gunzip > `date +%F-%s`_${DB_NAME}.sql

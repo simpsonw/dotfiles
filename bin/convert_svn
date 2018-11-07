@@ -1,0 +1,41 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+	  echo "Usage: $0 SVNURL" 1>&2
+	  exit 1
+fi
+
+if ! command -v svn2git >/dev/null 2>&1 ; then
+    echo "Cannot find svn2git.  Please install the svn2git Ruby gem"
+    exit 1
+fi
+
+if [ -z `git help -a | grep \ svn` ]; then
+    echo "git-svn not found.  Please install git-svn to continue."
+    exit 1
+fi
+
+SVN_URL="$1"
+REPO_NAME=`basename $1`
+GIT_EDITOR=`git config --get --global core.editor`
+
+echo "Retrieving authors from $SVN_URL..."
+svn log -q ${SVN_URL} | awk -F '|' '/^r/ {sub("^ ", "", $2); sub(" $", "", $2); print $2" = "$2" <"$2">"}' | sort -u > authors-transform.txt
+printf "\n\nIn order to properly map svn committers to git, you will have to manually edit the list.\n"
+printf "For example, youre  going to replace lines like: \n\twildcatw = wildcatw <wildcatw> \nwith: \n\twildcatw = Wilbur Wildcat <wilbur@arizona.edu>\n\n"
+read -p "Press [Enter] key to start $GIT_EDITOR to edit the list and make sure to SAVE THE FILE BEFORE EXITING..."
+$GIT_EDITOR authors-transform.txt
+
+mkdir ${REPO_NAME}
+cd ${REPO_NAME}
+svn2git ${SVN_URL} --authors=../authors-transform.txt
+
+if [ $? -eq 0 ]; then
+    echo "Cleaning up..."
+    rm ../authors-transform.txt
+    echo "Created git repo in $REPO_NAME"
+    exit 0
+else
+    echo "Conversion failed.  Leaving authors-transform.txt in place"
+    exit 1
+fi
