@@ -12,11 +12,14 @@ case $i in
     shift # past argument=value
     ;;
     *)
-    echo "Usage: remote_mysqldump -u=[mysql_username] -d=[mysql_database] [ssh_user]@[ssh_remote_host]"
-    exit 1
-    
     ;;
 esac
 done
+
+if [ -z "$DB_USER" ] || [ -z "$DB_NAME" ] || [ -z "$1" ]
+then
+    echo "Usage: remote_mysqldump -u=[mysql_username] -d=[mysql_database] [ssh_user]@[ssh_remote_host]"
+    exit 1
+fi
 
 ssh $1 "mysqldump -u ${DB_USER} -p  ${DB_NAME} | gzip -c" | gunzip > `date +%F-%s`_${DB_NAME}.sql
