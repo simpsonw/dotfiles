@@ -1,6 +1,4 @@
 #!/bin/sh
-echo "source ~/.golang.bash" >> ~/.bashrc
-source ~/.bashrc
 sudo apt install golang-go
 go get -u -v github.com/nsf/gocode
 go get -u -v github.com/rogpeppe/godef
