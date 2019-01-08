@@ -9,3 +9,4 @@ GTAGS
 GRTAGS
 GPATH
 .tern-port
+.ac-php-conf.json
