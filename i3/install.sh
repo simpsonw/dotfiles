@@ -8,6 +8,7 @@ sudo add-apt-repository ppa:jasonpleau/rofi
 sudo apt update
 sudo apt-get install rofi
 sudo apt-get install feh
+sudo apt-get install compton
 feh --bg-center $PWD/wallpaper.png
 git clone git@github.com:krusipo/cinnamon-i3.git
 cd cinnamon-i3
