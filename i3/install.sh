@@ -18,3 +18,4 @@ grunt debian
 sudo dpkg -i dist/debian/cinnamon-i3_0.5.0-1_amd64.deb
 sudo apt-get -f install
 rm -rf cinnamon-i3
+sudo apt-get install libanyevent-i3-perl
