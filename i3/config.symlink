@@ -135,6 +135,8 @@ bindsym $mod+Shift+p exec cinnamon-session-quit --power-off
 # * use 'exec cinnamon-screensaver-command -l'   : locks the screen
 # * use 'exec cinnamon-screensaver-lock-dialog   : lockscreen with message
 
+exec --no-startup-id "sh -c 'sleep 5; exec xmodmap ~/.Xmodmap'"
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
