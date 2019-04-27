@@ -22,7 +22,7 @@
 URxvt.font: 		xft:Inconsolata:size=15
 URxvt.scrollBar:	false
 URxvt.depth:	        32	
-URxvt.background:	[85]#282A36  
+URxvt.background:	[95]#282A36
 
 rofi.color-enabled:	true
 rofi.color-window:	#000, #000, #000
