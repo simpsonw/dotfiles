@@ -1,4 +1,4 @@
-sudo apt-get install npm
+sudo apt-get install -y npm
 
 # Packages needed for Spacemacs JavaScript layer
 sudo npm install -g tern
