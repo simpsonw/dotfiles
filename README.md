@@ -3,7 +3,7 @@
 ## dotfiles
 
 These are my dotfiles for configuring bash, git, and many other things.  These
-are targeted for my current Linux distro of choice, Linux Mint 18.3 and have not
+are targeted for my current Linux distro of choice, Linux Mint 19.1 and have not
 been tested on other environments.  This repo started as a fork of the
 [dotfiles](https://github.com/holman/dotfiles) repo from @holman.
 
@@ -30,19 +30,6 @@ script/install
 Will install dependencies, some of which are coming from apt and others of which
 are coming from other sources like Github.
 
-I currently use the [Spacesmacs](https://github.com/syl20bnr/spacemacs)
-distribution of [GNU Emacs](https://www.gnu.org/software/emacs/) as my main text
-editor.  Spacemacs recommends that you use Emacs version 24.4+ to get the best
-experience.  Unfortunately, the default repos for Linux Mint only contain older
-versions of Emacs.  I have included a simple script to build Emacs 24.5.1 from
-source and install it.  Before you run it, make sure you check the "Enable
-source code repositores" box under "Software Sources."  Then you can run:
-
-```sh
-spacemacs/emacs-install.sh
-```
-
-to build and install.
 
 ## components
 
