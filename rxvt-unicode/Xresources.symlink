@@ -19,7 +19,7 @@
 *.color15:    #E6E6E6
 
 
-URxvt.font: 		xft:Inconsolata:size=15
+URxvt.font: 		xft:Inconsolata:size=16
 URxvt.scrollBar:	false
 URxvt.depth:	        32	
 URxvt.background:	[95]#282A36
