@@ -96,6 +96,9 @@ bindsym $mod+space focus mode_toggle
 # take screenshot
 bindsym $mod+Print exec gnome-screenshot -i
 
+# Start Cisco AnyConnect
+bindsym $mod+v exec /opt/cisco/anyconnect/bin/vpnui
+
 # focus the parent container
 bindsym $mod+a focus parent
 
