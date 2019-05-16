@@ -37,12 +37,6 @@ set -sg repeat-time 1000
 
 ##### Mouse Support (or lack thereof) #####
 
-# No mouse for you!
-# (Note: turning on mouse support seems to make it impossible to use the
-# mouse to copy text into the system clipboard. Surely there's a way
-# around this if I ever feel like shaving that yak. -JW)
-setw -g mode-mouse off
-
 
 
 ##### Scrollback Navigation #####
@@ -113,7 +107,6 @@ set -g message-bg black
 set -g message-attr bright
 
 # Status Bar Items
-set -g status-utf8 on
 set -g status-left-length 40
 set -g status-left "#[fg=green]Session: #S #[fg=yellow]#I #[fg=green]#P"
 set -g status-right "#[fg=yellow]%d %b %R #[fg=green]#(wemux status_users)"
@@ -129,4 +122,4 @@ bind-key y   new-window -n "emacs"  "emacsclient -nw"
 bind-key C-y split-window "emacsclient -nw"
 
 ##### Local Settings #####
-source-file ~/.tmux.conf.local
+# source-file ~/.tmux.conf.local
