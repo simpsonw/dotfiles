@@ -38,6 +38,7 @@ values."
      restclient
      chrome
      python
+     django
      csharp
      c-c++
      (c-c++ :variables c-c++-enable-clang-support t)
@@ -367,6 +368,15 @@ you should place your code here."
   (add-to-list 'auto-mode-alist '("\\.blade.php\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.ctp\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
+  (defun wsimpson/django ()
+    (if (projectile-project-p)
+        (if (file-exists-p (concat (projectile-project-root) "manage.py"))
+            (web-mode-set-engine "django")
+          (message "do not exists") ;; You can safely delet this line
+          )
+      )
+    )
+  (add-hook 'web-mode-hook 'wsimpson/django)
   ;;(my-setup-indent 4)
   (setq tramp-default-method "ssh")
   (transient-mark-mode 1)
