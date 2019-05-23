@@ -72,6 +72,7 @@ values."
      git
      javascript
      shell
+     (shell :variables shell-default-shell 'multi-term)
      ;themes-megapack
      )
    ;; List of additional packages that will be installed without being
