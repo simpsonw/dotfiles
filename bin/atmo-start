@@ -1,0 +1,18 @@
+#!/bin/bash
+
+SESSION="atmosphere"
+WORKSPACE="$HOME/workspace/cyverse"
+ATMO_DOCKER_DIR="$WORKSPACE/atmosphere-docker"
+ATMO_DOCKER_COMPOSE_YML="$ATMO_DOCKER_DIR/docker-compose.yml"
+ATMO_DIR="$WORKSPACE/atmosphere"
+
+cd $ATMO_DIR
+docker-compose -f $ATMO_DOCKER_COMPOSE_YML up -d
+
+tmux -2 new-session -d -s $SESSION
+tmux new-window -n atmo-bash docker-compose -f $ATMO_DOCKER_COMPOSE_YML exec atmosphere bash
+tmux new-window -n tropo-bash docker-compose -f $ATMO_DOCKER_COMPOSE_YML exec troposphere bash
+tmux new-window -n logs docker-compose -f $ATMO_DOCKER_COMPOSE_YML logs -f
+
+tmux select-window  -t $SESSION:1
+tmux -2 attach -t $SESSION

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SESSION="atmosphere"
+WORKSPACE="$HOME/workspace/cyverse"
+ATMO_DOCKER_DIR="$WORKSPACE/atmosphere-docker"
+ATMO_DOCKER_COMPOSE_YML="$ATMO_DOCKER_DIR/docker-compose.yml"
+ATMO_DIR="$WORKSPACE/atmosphere"
+
+cd $ATMO_DIR
+docker-compose -f $ATMO_DOCKER_COMPOSE_YML down 
+tmux kill-session -t $SESSION
