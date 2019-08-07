@@ -5,7 +5,8 @@ WORKSPACE="$HOME/workspace/cyverse"
 ATMO_DOCKER_DIR="$WORKSPACE/atmosphere-docker"
 ATMO_DOCKER_COMPOSE_YML="$ATMO_DOCKER_DIR/docker-compose.yml"
 ATMO_DIR="$WORKSPACE/atmosphere"
+ATMO_DOCKER_SCRIPT="$ATMO_DOCKER_DIR/atmosphere-docker.sh"
 
 cd $ATMO_DIR
-docker-compose -f $ATMO_DOCKER_COMPOSE_YML down 
+$ATMO_DOCKER_SCRIPT -f $ATMO_DOCKER_COMPOSE_YML down 
 tmux kill-session -t $SESSION
