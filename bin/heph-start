@@ -1,0 +1,16 @@
+#!/bin/bash
+
+SESSION="hephaestus"
+WORKSPACE="$GOPATH/src/gitlab.cyverse.org/wsimpson/hephaestus"
+SCRIPT_DIR="$WORKSPACE/scripts/"
+
+cd $WORKSPACE
+
+tmux -2 new-session -d -s $SESSION
+tmux new-window -n test -c $WORKSPACE/test
+tmux new-window -n nats-streaming nats-streaming-server
+tmux new-window -n scripts -c $SCRIPT_DIR "./create_gcloud_cluster.sh && sleep 60 && ./install_knative.sh && sleep 60 && ./install_tekton.sh && bash"
+
+tmux select-window  -t $SESSION:1
+tmux -2 attach -t $SESSION
+

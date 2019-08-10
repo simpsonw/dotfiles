@@ -1,0 +1,3 @@
+#!/bin/bash
+SESSION="hephaestus"
+tmux kill-session -t $SESSION
