@@ -46,6 +46,7 @@ values."
      (markdown :variables markdown-live-preview-engine 'vmd)
      yaml
      docker
+     go
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -267,7 +268,7 @@ values."
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-active-transparency 95
+   dotspacemacs-active-transparency 90
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -360,8 +361,18 @@ you should place your code here."
     )
   (add-hook 'web-mode-hook 'wsimpson/django)
   (setq tramp-default-method "ssh")
+  (setq org-src-tab-acts-natively t)
   (transient-mark-mode 1)
-  (spacemacs/enable-transparency)
+  (add-hook 'after-make-frame-functions 'spacemacs/enable-transparency)
+  (add-hook 'text-mode-hook 'auto-fill-mode)
+  (setq-default fill-column 100)
+  (setq org-src-preserve-indentation nil
+        org-edit-src-content-indentation 0)
+  (add-hook 'org-mode-hook
+            '(lambda()
+               (setq tab-width 8)
+               (setq indent-tabs-mode t)
+               ))
   (spacemacs/set-leader-keys
     "dd" 'ac-php-find-symbol-at-point
     "dt" 'ac-php-location-stack-back)
