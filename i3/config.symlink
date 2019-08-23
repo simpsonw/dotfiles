@@ -152,6 +152,7 @@ bindsym $mod+Shift+p exec cinnamon-session-quit --power-off
 
 exec --no-startup-id "sh -c 'sleep 5; exec xmodmap ~/.Xmodmap'"
 exec_always "emacs --daemon"
+new_window 1pixel
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
