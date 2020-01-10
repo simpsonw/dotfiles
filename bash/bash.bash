@@ -8,6 +8,10 @@ k8s_aliases() {
     fi
 }
 
+clipencode() {
+    cat $1 | base64 -w 0 | xclip -selection clipboard
+}
+
 # Aliases
 alias pass-generate="pass generate -c"
 k8s_aliases
