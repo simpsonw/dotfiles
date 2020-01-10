@@ -14,4 +14,8 @@ clipencode() {
 
 # Aliases
 alias pass-generate="pass generate -c"
+alias ncd="cd $GOPATH/src/gitlab.com/cyverse/nafigos"
+alias gpcd="cd $GOPATH"
 k8s_aliases
+alias kminikube="k config use-context minikube"
+alias kkind="k config use-context kind-kind"
