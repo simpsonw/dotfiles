@@ -1,6 +1,7 @@
 .DS_Store
 *~
 *.swp
+.#*
 .settings.el
 .php_cs.cache
 TAGS
