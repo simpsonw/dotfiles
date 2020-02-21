@@ -1,5 +1,7 @@
 set -o vi
 export VISUAL=vim
+export NAFIGOS_PATH="/home/wsimpson/workspace/golang/src/gitlab.com/cyverse/nafigos"
+export PATH="$PATH:$NAFIGOS_PATH/tools/kind:$NAFIGOS_PATH/tools"
 
 k8s_aliases() {
     if hash kubectl 2>/dev/null; then
@@ -12,10 +14,22 @@ clipencode() {
     cat $1 | base64 -w 0 | xclip -selection clipboard
 }
 
+cpencode() {
+    cat $1 | base64 -w 0 > $2
+}
+
 # Aliases
 alias pass-generate="pass generate -c"
 alias ncd="cd $GOPATH/src/gitlab.com/cyverse/nafigos"
+alias tncd="cd $GOPATH/src/gitlab.com/simpsonw/test_nafigos"
 alias gpcd="cd $GOPATH"
 k8s_aliases
 alias kminikube="k config use-context minikube"
 alias kkind="k config use-context kind-kind"
+alias kuser="k config use-context kind-user-cluster"
+alias kservice="k config use-context kind-service-cluster"
+alias kapply="find . -type d -name kubernetes -exec kubectl apply -Rf {} \;"
+alias kdelete="find . -type d -name kubernetes -exec kubectl apply -Rf {} \;"
+alias kwg="watch kubectl get"
+export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\](\$(kubectl config current-context))\n$ "
+
