@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [[ -z "${NAFIGOS_PATH}" ]]; then
+    echo "NAFIGOS_PATH needs to be set"
+    exit 1
+fi
+
+if [[ -z "${GOPATH}" ]]; then
+    echo "GOPATH needs to be set"
+    exit 1
+fi
+
+SESSION="nafigos"
+NAFIGOS_KIND="$NAFIGOS_PATH/tools/kind"
+TEST_NAFIGOS="$GOPATH/src/gitlab.com/simpsonw/test_nafigos"
+
+
+cd $NAFIGOS_KIND
+kind delete cluster --name service-cluster && kind delete cluster --name user-cluster
+./create_kind_clusters.sh
+cd $NAFIGOS_PATH
+
+
+tmux -2 new-session -d -s $SESSION skaffold dev
+tmux new-window
+tmux new-window -n test -c $TEST_NAFIGOS
+
+tmux select-window  -t $SESSION:1
+tmux -2 attach -t $SESSION
+skaffold dev
