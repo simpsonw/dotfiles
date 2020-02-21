@@ -1,2 +1,2 @@
 export GOPATH=$HOME/workspace/golang
-PATH=$PATH:$GOPATH/bin
+PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
