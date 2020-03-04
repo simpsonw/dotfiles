@@ -13,18 +13,15 @@ fi
 SESSION="nafigos"
 NAFIGOS_KIND="$NAFIGOS_PATH/tools/kind"
 TEST_NAFIGOS="$GOPATH/src/gitlab.com/simpsonw/test_nafigos"
-
+rm $NAFIGOS_PATH/deploy/keycloak_configmap.yaml
 
 if [ "$1" != "tmux_only" ];
 then
     cd $NAFIGOS_KIND
     kind delete cluster --name service-cluster && kind delete cluster --name user-cluster
     ./create_kind_clusters.sh
-    cd $TEST_NAFIGOS
-    sleep 30
-    ./keycloak_setup.sh
-    cd $NAFIGOS_PATH
 fi
+cd $NAFIGOS_PATH
 
 tmux -2 new-session -d -s $SESSION skaffold dev
 tmux new-window
