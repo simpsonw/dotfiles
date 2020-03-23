@@ -23,7 +23,7 @@ then
 fi
 cd $NAFIGOS_PATH
 
-tmux -2 new-session -d -s $SESSION skaffold dev
+tmux -2 new-session -d -s $SESSION -n skaffold
 tmux new-window
 tmux new-window -n test -c $TEST_NAFIGOS
 
