@@ -1,7 +1,7 @@
 set -o vi
 export VISUAL=vim
 export NAFIGOS_PATH="/home/wsimpson/workspace/golang/src/gitlab.com/cyverse/nafigos"
-export PATH="$PATH:$NAFIGOS_PATH/tools/kind:$NAFIGOS_PATH/tools"
+export PATH="$PATH:$NAFIGOS_PATH/tools/kind:$NAFIGOS_PATH/cmd"
 
 k8s_aliases() {
     if hash kubectl 2>/dev/null; then
