@@ -2,6 +2,7 @@ set -o vi
 export VISUAL=vim
 export NAFIGOS_PATH="$GOPATH/src/gitlab.com/cyverse/nafigos"
 export PATH="$PATH:$NAFIGOS_PATH/tools/kind:$NAFIGOS_PATH/cmd"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 k8s_aliases() {
     if hash kubectl 2>/dev/null; then
@@ -31,5 +32,6 @@ alias kservice="k config use-context kind-service-cluster"
 alias kapply="find . -type d -name kubernetes -exec kubectl apply -Rf {} \;"
 alias kdelete="find . -type d -name kubernetes -exec kubectl apply -Rf {} \;"
 alias kwg="watch kubectl get"
-export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\](\$(kubectl config current-context))\n$ "
+source $DIR/kube-ps1/kube-ps1.sh
+export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\](\$(kube_ps1))\n$ "
 
