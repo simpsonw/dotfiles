@@ -11,23 +11,21 @@ if [[ -z "${GOPATH}" ]]; then
 fi
 
 SESSION="nafigos"
-NAFIGOS_KIND="$NAFIGOS_PATH/tools/kind"
+NAFIGOS_INSTALL="$NAFIGOS_PATH/install"
 TEST_NAFIGOS="$GOPATH/src/gitlab.com/simpsonw/test_nafigos"
 rm $NAFIGOS_PATH/deploy/keycloak_configmap.yaml
 
 if [ "$1" != "tmux_only" ];
 then
-    cd $NAFIGOS_KIND
     kind delete cluster --name service-cluster && \
-    kind delete cluster --name user-cluster && \
-    kind delete cluster --name secondary-user-cluster
-
-    ./create_kind_clusters.sh
+        kind delete cluster --name user-cluster && \
+        kind delete cluster --name secondary-user-cluster
 fi
 cd $NAFIGOS_PATH
 
 tmux -2 new-session -d -s $SESSION -n skaffold
 tmux new-window
+tmux new-window -n install -c $NAFIGOS_INSTALL
 tmux new-window -n test -c $TEST_NAFIGOS
 
 tmux select-window  -t $SESSION:1
