@@ -2,9 +2,9 @@
 # Script for irods i-commands auto-completion with bash
 # This script is GPL, blah blah blah...
 # Bruno Bzeznik <Bruno.Bzeznik@imag.fr> 10/2011
-#  
+#
 # Simply source this script as follows:
-#     . irods_completion.bash 
+#     . irods_completion.bash
 # and enjoy <tab> key
 # Feel free to improve!
 #
@@ -59,7 +59,7 @@ _ils() {
       COMPREPLY+=( $(compgen -o default ${cur}) )
     fi
 
-  # General case 
+  # General case
   else
     COMPREPLY=( $(compgen -P "$dirname" -W "$list" ${basename}) )
   fi
@@ -67,4 +67,3 @@ _ils() {
 
 # Complete the specified commands
 complete -o nospace -F _ils $command_list
-
