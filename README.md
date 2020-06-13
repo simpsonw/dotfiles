@@ -3,8 +3,8 @@
 ## dotfiles
 
 These are my dotfiles for configuring bash, git, and many other things.  These
-are targeted for my current Linux distro of choice, Linux Mint 19.1 and have not
-been tested on other environments.  This repo started as a fork of the
+are targeted for my current Linux distro of choice, Ubuntu 20.04 (using `regolith-desktop`),  
+and have not been tested on other environments.  This repo started as a fork of the
 [dotfiles](https://github.com/holman/dotfiles) repo from @holman.
 
 I decided to "unfork" from the main holman repo since I tend to use Bash rather than
