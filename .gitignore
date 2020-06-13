@@ -1,4 +1,5 @@
 git/gitconfig.symlink
 bash/dotfiles.bashrc
+bash/kube-ps1
 
 gnome-terminal-colors/gnome-terminal-colors
