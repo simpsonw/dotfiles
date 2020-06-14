@@ -4,21 +4,7 @@
 unbind C-b
 
 # By default, we'll use Control-backslash as the prefix key.
-set -g prefix 'C-\' ; bind 'C-\' send-prefix
-
-# However, some people complain about this, so we'll also add a few
-# bindings that let you quickly select the binding you want.
-# You can add your own to ~/.tmux.conf.local (see bottom of file).
-#
-# These lines take the form:
-# bind A set -g prefix 'C-a' \; bind 'C-a' send-prefix
-#        \_________________/    \____________________/
-# The first command sets C-a as the prefix.
-# The second command allows the prefix keystroke to be sent to the
-# active pane (in case the binding overrides something that was useful).
-bind A set -g prefix 'C-a' \; bind 'C-a' send-prefix
-bind T set -g prefix 'C-t' \; bind 'C-t' send-prefix
-bind \ set -g prefix 'C-\' \; bind 'C-\' send-prefix
+set-option -g prefix 'C-\' ; bind 'C-\' send-prefix
 
 # Reload tmux config so we can pick up changes to this file without needing to restart tmux
 bind r source-file ~/.tmux.conf \; display "Reloaded tmux configuration!"
@@ -88,23 +74,16 @@ set -g status-fg white
 set -g status-bg "#333333"
 
 # Window list
-setw -g window-status-fg green
-setw -g window-status-bg default
-setw -g window-status-attr dim
-setw -g window-status-current-fg colour0
-setw -g window-status-current-bg colour12
-setw -g window-status-current-attr bright
+setw -g window-status-style fg=green,bg=default,dim
+setw -g window-status-current-style fg=colour0,bg=colour12,bright
 
 # Pane borders
-set -g pane-border-fg green
-set -g pane-border-bg black
-set -g pane-active-border-fg green
+set -g pane-border-style fg=green,bg=black
+set -g pane-active-border-style fg=green
 # set -g pane-active-border-bg yellow
 
 # Command line
-set -g message-fg white
-set -g message-bg black
-set -g message-attr bright
+set -g message-style fg=white,bg=black,bright
 
 # Status Bar Items
 set -g status-left-length 40
