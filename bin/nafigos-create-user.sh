@@ -1,6 +1,6 @@
 #!/bin/bash
 function prefix_printf() {
-    printf "[$0]> $1\n"
+    printf "[nafigos-create-user]> $1\n"
 }
 
 GIT_SECRET=`pass ls simpsonw/github_personal_access_token`
