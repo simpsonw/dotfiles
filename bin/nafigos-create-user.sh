@@ -23,10 +23,10 @@ export NAFIGOS_USER="$1"
 export NAFIGOS_DOCKERHUB_SECRET=`nafigos create secret -type dockerhub -value $DOCKERHUB_SECRET -username nafigostest $1 | jq -r .id`
 export NAFIGOS_GIT_SECRET=`nafigos create secret -type git -value $GIT_SECRET -username simpsonw $1 | jq -r .id`
 export NAFIGOS_CLUSTER=`nafigos get kcluster | jq -r .[].id`
-CREATE_USER='n'
+CREATE_WFD='n'
 prefix_printf "Create WFD for $NAFIGOS_WFD_URL [y/n]?"
-read CREATE_USER
-if [ "$CREATE_USER" == "y" ];
+read CREATE_WFD
+if [ "$CREATE_WFD" == "y" ];
 then
     export NAFIGOS_WFD=`nafigos create wfd -url $NAFIGOS_WFD_URL | jq -r .id`
 fi
