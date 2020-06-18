@@ -3,6 +3,16 @@ function prefix_printf() {
     printf "[nafigos-create-user]> $1\n"
 }
 
+if [ -z "$1" ]; then
+    prefix_printf "Cannot create user without username"
+    exit 1
+fi
+
+if [ -z "$2" ]; then
+    prefix_printf "Cannot create user without password"
+    exit 1
+fi
+
 GIT_SECRET=`pass ls simpsonw/github_personal_access_token`
 DOCKERHUB_SECRET=`pass ls nafigostest/dockerhub`
 if [ -z "$3" ]; then
