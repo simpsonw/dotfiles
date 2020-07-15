@@ -12,7 +12,7 @@ fi
 
 SESSION="nafigos"
 NAFIGOS_INSTALL="$NAFIGOS_PATH/install"
-TEST_NAFIGOS="$GOPATH/src/gitlab.com/simpsonw/test_nafigos"
+TEST_NAFIGOS="$NAFIGOS_PATH/test"
 rm $NAFIGOS_PATH/deploy/keycloak_configmap.yaml
 
 if [ "$1" != "tmux_only" ];
