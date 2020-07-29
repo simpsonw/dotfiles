@@ -19,7 +19,7 @@ DELETE_CLUSTERS='n'
 printf "Delete existing Kind clusters [y/n]?"
 read DELETE_CLUSTERS
 
-if [ "$DELETE_CLUSTERS" != "y" ];
+if [ "$DELETE_CLUSTERS" == "y" ];
 then
     kind delete cluster --name service-cluster && \
         kind delete cluster --name user-cluster && \
