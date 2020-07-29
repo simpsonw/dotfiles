@@ -5,12 +5,12 @@ function prefix_printf() {
 
 if [ -z "$1" ]; then
     prefix_printf "Cannot create user without username"
-    exit 1
+    return
 fi
 
 if [ -z "$2" ]; then
     prefix_printf "Cannot create user without password"
-    exit 1
+    return
 fi
 
 GIT_SECRET=`pass ls simpsonw/github_personal_access_token`
