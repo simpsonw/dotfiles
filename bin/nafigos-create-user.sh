@@ -28,7 +28,6 @@ fi
 nafigos create user -username $1 -password $2 $3
 sleep 5
 export NAFIGOS_WFD_URL="https://github.com/calvinmclean/nafigos-helloworld"
-export NAFIGOS_TOKEN="$2"
 export NAFIGOS_USER="$1"
 export NAFIGOS_DOCKERHUB_SECRET=`nafigos create secret -type dockerhub -value $DOCKERHUB_SECRET -username nafigostest $1 | jq -r .id`
 export NAFIGOS_GIT_SECRET=`nafigos create secret -type git -value $GIT_SECRET -username simpsonw $1 | jq -r .id`
