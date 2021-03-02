@@ -12,3 +12,4 @@ GPATH
 .tern-port
 .ac-php-conf.json
 *.pyc
+node_modules/
