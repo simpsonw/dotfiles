@@ -1,7 +1,4 @@
 #!/bin/sh
-wget https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.14.4.linux-amd64.tar.gz
-rm go1.14.4.linux-amd64.tar.gz
 GO111MODULE=on go get -v golang.org/x/tools/gopls@latest
 GO111MODULE=on CGO_ENABLED=0 go get -v -trimpath -ldflags '-s -w' github.com/golangci/golangci-lint/cmd/golangci-lint
 go get -u -v golang.org/x/tools/cmd/godoc
@@ -14,6 +11,5 @@ go get -u -v github.com/fatih/gomodifytags
 go get -u -v github.com/godoctor/godoctor
 go get -u -v github.com/haya14busa/gopkgs/cmd/gopkgs
 go get -u -v github.com/josharian/impl
-go get -u -v github.com/mdempsky/gocode
 go get -u -v github.com/rogpeppe/godef
-go get -u -v github.com/zmb3/gogetdoc
+go install github.com/go-delve/delve/cmd/dlv@latest

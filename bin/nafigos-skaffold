@@ -1,7 +1,0 @@
-#!/bin/bash
-
-ORIGINAL_CONTEXT=`kubectl config current-context`
-if [[ "$ORIGINAL_CONTEXT" != "kind-service-cluster" ]]; then
-	kubectl config use-context kind-service-cluster
-fi
-skaffold dev
