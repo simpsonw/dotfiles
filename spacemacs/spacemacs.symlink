@@ -479,7 +479,7 @@ dump."
   )
 
 (defun dotspacemacs/user-config ()
-  (add-hook 'after-make-frame-functions 'spacemacs/enable-transparency)
+  (setq magit-git-executable "/usr/bin/git")
   (setq tramp-default-method "ssh")
   (setq lsp-file-watch-threshold 8000)
   (require 'lsp-mode)
